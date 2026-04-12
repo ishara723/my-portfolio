@@ -1,27 +1,75 @@
 // src/components/Skills.jsx
 import React from 'react';
+import {
+  Code2,
+  Coffee,
+  Braces,
+  FileCode2,
+  Palette,
+  Layers,
+  Wind,
+  Server,
+  Network,
+  Database,
+  Leaf,
+  MessageSquare,
+  Users,
+  Clock3,
+  Briefcase,
+  Lightbulb,
+  RefreshCw,
+  GitBranch,
+  Github,
+  Package,
+  Send,
+  Monitor
+} from 'lucide-react';
 
-/* ================= Skill Progress Bar ================= */
+/* ================= Skill Icon Resolver ================= */
 
-const SkillBar = ({ skill }) => {
+const getSkillIcon = (skillName) => {
+  const name = skillName.toLowerCase();
+
+  if (name.includes('java') && !name.includes('javascript')) return Coffee;
+  if (name.includes('javascript')) return FileCode2;
+  if (name === 'c') return Braces;
+  if (name.includes('html')) return FileCode2;
+  if (name.includes('css')) return Palette;
+  if (name.includes('react')) return Layers;
+  if (name.includes('tailwind')) return Wind;
+  if (name.includes('spring boot')) return Server;
+  if (name.includes('rest api')) return Network;
+  if (name.includes('mysql')) return Database;
+  if (name.includes('mongodb')) return Leaf;
+  if (name.includes('communication')) return MessageSquare;
+  if (name.includes('team')) return Users;
+  if (name.includes('time management')) return Clock3;
+  if (name.includes('leadership')) return Briefcase;
+  if (name.includes('problem solving')) return Lightbulb;
+  if (name.includes('adaptability')) return RefreshCw;
+  if (name === 'git') return GitBranch;
+  if (name === 'github') return Github;
+  if (name === 'npm') return Package;
+  if (name.includes('postman')) return Send;
+  if (name.includes('vs code')) return Monitor;
+
+  return Code2;
+};
+
+/* ================= Skill Item ================= */
+
+const SkillItem = ({ skill }) => {
+  const Icon = getSkillIcon(skill.name);
+
   return (
-    <div className="mb-6">
-      <div className="flex items-center justify-between text-base md:text-lg text-slate-200 mb-2.5">
-        <span className="font-semibold">{skill.name}</span>
-        <span className="text-slate-400">{skill.level}%</span>
+    <div className="flex items-center gap-3 rounded-xl border border-sky-500/20 bg-slate-900/60 px-4 py-3 min-w-[170px]">
+      <div className="w-9 h-9 rounded-lg bg-sky-500/15 text-sky-300 flex items-center justify-center border border-sky-500/30">
+        <Icon size={20} />
       </div>
-
-      <div
-        className="h-3.5 rounded-md bg-slate-900/70 border border-sky-500/30 overflow-hidden"
-        role="progressbar"
-        aria-valuemin={0}
-        aria-valuemax={100}
-        aria-valuenow={skill.level}
-      >
-        <div
-          className="h-full bg-gradient-to-r from-sky-400 to-blue-500 transition-all duration-700 ease-out"
-          style={{ width: `${skill.level}%` }}
-        ></div>
+      <div className="min-w-0">
+        <span className="font-semibold text-sm md:text-base text-slate-100 whitespace-nowrap">
+          {skill.name}
+        </span>
       </div>
     </div>
   );
@@ -43,15 +91,19 @@ const SkillCard = ({ category, items, subcategories }) => {
               <h4 className="text-lg md:text-xl font-semibold text-sky-200 uppercase tracking-[0.2em] mb-5 pb-2 border-b border-sky-500/20">
                 {sub.title}
               </h4>
-              {sub.items.map((skill, idx) => (
-                <SkillBar key={idx} skill={skill} />
-              ))}
+              <div className="flex flex-wrap gap-3">
+                {sub.items.map((skill, idx) => (
+                  <SkillItem key={idx} skill={skill} />
+                ))}
+              </div>
             </div>
           ))
         ) : (
-          items.map((skill, index) => (
-            <SkillBar key={index} skill={skill} />
-          ))
+          <div className="flex flex-wrap gap-3">
+            {items.map((skill, index) => (
+              <SkillItem key={index} skill={skill} />
+            ))}
+          </div>
         )}
       </div>
     </div>
@@ -79,7 +131,7 @@ const Skills = ({ data }) => {
         
         {/* ===== Section Header ===== */}
         <div className="text-center mb-16">
-          <h2 className="text-6xl md:text-7xl font-bold text-white">
+          <h2 className="text-6xl md:text-4xl font-bold text-white">
             Skills & Expertise
           </h2>
           <div className="w-24 h-1 bg-sky-500 mx-auto mt-5"></div>
@@ -101,7 +153,7 @@ const Skills = ({ data }) => {
         {toolsAndPlatforms && toolsAndPlatforms.length > 0 && (
           <>
             <div className="text-center mb-12">
-              <h3 className="text-4xl md:text-5xl font-bold text-white">
+              <h3 className="text-4xl md:text-4xl font-bold text-white">
                 Tools & Platforms
               </h3>
               <div className="w-20 h-1 bg-sky-500 mx-auto mt-4"></div>

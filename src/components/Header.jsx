@@ -40,7 +40,7 @@ const Header = ({ activeSection, setActiveSection, sections }) => {
           {/* Logo/Name */}
           <button
             onClick={() => handleNavClick('hero')}
-            className={`text-5xl font-bold transition-colors ${
+            className={`text-2xl font-bold transition-colors ${
               isScrolled ? 'text-slate-800' : 'text-white'
             }`}
           >
@@ -53,7 +53,7 @@ const Header = ({ activeSection, setActiveSection, sections }) => {
               <button
                 key={section.id}
                 onClick={() => handleNavClick(section.id)}
-                className={`text-4xl font-medium transition-colors ${
+                className={`text-lg font-medium transition-colors ${
                   activeSection === section.id
                     ? isScrolled 
                       ? 'text-blue-600' 

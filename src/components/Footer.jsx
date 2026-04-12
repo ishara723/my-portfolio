@@ -117,18 +117,6 @@ const Footer = ({ data }) => {
           </div>
         </div>
       </div>
-
-      {/* Additional Footer Strip (Optional) */}
-      <div className="bg-slate-950 py-6">
-        <div className="max-w-6xl mx-auto px-6 md:px-12 text-center">
-          <p className="text-slate-400 text-base">
-            This portfolio is built with React and Tailwind CSS • 
-            <a href="#contact" className="text-sky-400 hover:text-sky-300 ml-1">
-              Hire me for your next project
-            </a>
-          </p>
-        </div>
-      </div>
     </footer>
   );
 };

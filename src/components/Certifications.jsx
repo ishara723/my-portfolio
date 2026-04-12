@@ -8,20 +8,20 @@ const CertificationCard = ({ cert }) => {
       <div className="flex items-start justify-between gap-4">
         <div className="flex items-start gap-4 flex-1">
           {/* Icon */}
-          <div className="w-20 h-20 bg-gradient-to-br from-sky-500 to-blue-600 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-md">
-            <Award className="text-white" size={38} />
+          <div className="w-20 h-20 bg-gradient-to-br from-sky-500 to-blue-600 rounded-lg flex items-center justify-center flex-shrink-0 shadow-md">
+            <Award className="text-white" size={30} />
           </div>
 
           {/* Content */}
           <div className="flex-1">
-            <h3 className="text-3xl md:text-4xl font-bold text-white mb-2">
+            <h3 className="text-3xl md:text-2xl font-bold text-white mb-2">
               {cert.name}
             </h3>
-            <p className="text-sky-400 font-semibold mb-3 text-2xl">
+            <p className="text-sky-400 font-semibold mb-3 text-xl">
               {cert.issuer}
             </p>
 
-            <div className="flex items-center gap-2 text-2xl text-slate-200">
+            <div className="flex items-center gap-2 text-xl text-slate-200">
               <Calendar size={30} />
               <span>{cert.date}</span>
             </div>
@@ -68,11 +68,11 @@ const Certifications = () => {
       <div className="max-w-none px-6 md:px-12 xl:px-16">
         {/* Header */}
         <div className="text-center mb-14">
-          <h2 className="text-8xl md:text-7xl font-bold text-white mb-5">
+          <h2 className="text-8xl md:text-4xl font-bold text-white mb-5">
             Certifications
           </h2>
           <div className="w-28 h-2 bg-sky-500 mx-auto mb-5"></div>
-          <p className="text-slate-200 max-w-6xl mx-auto text-4xl md:text-3xl">
+          <p className="text-slate-200 max-w-6xl mx-auto text-4xl md:text-xl">
             Courses and certifications completed to strengthen my technical foundation and support my career growth in software development.
           </p>
         </div>
@@ -88,35 +88,35 @@ const Certifications = () => {
         <div className="mt-14 grid md:grid-cols-3 gap-8">
           <div className="bg-[#0f2232] border border-sky-500/25 rounded-2xl p-8 text-center shadow-sm">
             <Award className="text-sky-400 mx-auto mb-4" size={40} />
-            <p className="text-5xl font-bold text-white">
+            <p className="text-4xl font-bold text-white">
               {certifications.length}
             </p>
-            <p className="text-slate-200 text-3xl">Courses Completed</p>
+            <p className="text-slate-200 text-2xl">Courses Completed</p>
           </div>
 
           <div className="bg-[#0f2232] border border-sky-500/25 rounded-2xl p-8 text-center shadow-sm">
             <Shield className="text-green-400 mx-auto mb-4" size={40} />
-            <p className="text-5xl font-bold text-white">
+            <p className="text-4xl font-bold text-white">
               {certifications.length}
             </p>
-            <p className="text-slate-200 text-3xl">Valid Certifications</p>
+            <p className="text-slate-200 text-2xl">Valid Certifications</p>
           </div>
 
           <div className="bg-[#0f2232] border border-sky-500/25 rounded-2xl p-8 text-center shadow-sm">
             <Calendar className="text-purple-400 mx-auto mb-4" size={40} />
-            <p className="text-5xl font-bold text-white">
+            <p className="text-4xl font-bold text-white">
               {new Date().getFullYear()}
             </p>
-            <p className="text-slate-200 text-3xl">Latest Learning Year</p>
+            <p className="text-slate-200 text-2xl">Latest Learning Year</p>
           </div>
         </div>
 
         {/* CTA */}
         <div className="mt-14 text-center bg-[#0f2232] border border-sky-500/25 rounded-2xl p-10 text-white">
-          <h3 className="text-4xl font-bold mb-3">
+          <h3 className="text-2xl font-bold mb-3">
             Continuous Learning Mindset
           </h3>
-          <p className="text-slate-200 text-2xl">
+          <p className="text-slate-200 text-xl">
             I actively follow courses and certifications to improve my skills and
             prepare for internship and entry-level software development roles.
           </p>

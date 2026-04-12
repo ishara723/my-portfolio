@@ -1,7 +1,8 @@
 // src/components/Projects.jsx
 
-import React, { useState } from 'react';
-import { ExternalLink, Github, Play, Star } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
+import { ExternalLink, Github, Play, Star, X } from 'lucide-react';
 
 const ProjectCard = ({ project }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -106,7 +107,10 @@ const ProjectCard = ({ project }) => {
               <button
                 key={image}
                 type="button"
-                onClick={() => setActiveImageIndex(index)}
+                onClick={() => {
+                  setActiveImageIndex(index);
+                  setIsModalOpen(true);
+                }}
                 className={`h-16 w-20 overflow-hidden rounded-md border transition-colors ${
                   index === activeImageIndex
                     ? 'border-sky-400'
@@ -129,25 +133,25 @@ const ProjectCard = ({ project }) => {
       <div className="p-6">
         {/* Header */}
         <div className="mb-3">
-          <h3 className="text-4xl font-bold text-white mb-1 group-hover:text-sky-400 transition-colors">
+          <h3 className="text-2xl font-bold text-white mb-1 group-hover:text-sky-400 transition-colors">
             {project.name}
           </h3>
-          <p className="text-xl text-sky-400 font-medium">{project.tagline}</p>
-          <p className="text-2xl text-slate-400 mt-1">{project.date}</p>
+          <p className="text-lg text-sky-400 font-medium">{project.tagline}</p>
+          <p className="text-md text-slate-400 mt-1">{project.date}</p>
         </div>
 
         {/* Description */}
-        <p className={`text-slate-200 mb-4 text-2xl ${showDetails ? '' : 'line-clamp-3'}`}>
+        <p className={`text-slate-200 mb-4 text-lg ${showDetails ? '' : 'line-clamp-3'}`}>
           {project.description}
         </p>
 
         {/* Features */}
         {project.features && project.features.length > 0 && (
           <div className="mb-4">
-            <h4 className="text-3xl font-bold text-slate-400 mb-2">Key Features:</h4>
+            <h4 className="text-xl font-bold text-slate-400 mb-2">Key Features:</h4>
             <ul className="space-y-1">
               {(showDetails ? project.features : project.features.slice(0, 3)).map((feature, index) => (
-                <li key={index} className="text-2xl text-slate-200 flex items-start gap-2">
+                <li key={index} className="text-lg text-slate-200 flex items-start gap-2">
                   <span className="text-sky-400 mt-0.5">•</span>
                   <span>{feature}</span>
                 </li>
@@ -160,21 +164,21 @@ const ProjectCard = ({ project }) => {
           <>
             {/* Outcome */}
             <div className="mb-4 p-3 bg-slate-900/70 rounded-lg border border-sky-500/20">
-              <p className="text-2xl text-slate-200">
+              <p className="text-xl text-slate-200">
                 <span className="font-semibold text-sky-400">Impact:</span> {project.outcome}
               </p>
             </div>
 
             {/* Technologies */}
             <div>
-              <h4 className="text-3xl font-bold text-slate-400 uppercase tracking-wide mb-2">
+              <h4 className="text-xl font-bold text-slate-400 uppercase tracking-wide mb-2">
                 Technologies
               </h4>
               <div className="flex flex-wrap gap-2">
                 {project.technologies.map((tech, index) => (
                   <span
                     key={index}
-                    className="bg-slate-900 text-slate-200 px-3 py-1 rounded-full text-2xl font-medium"
+                    className="bg-slate-900 text-slate-200 px-3 py-1 rounded-full text-lg font-medium"
                   >
                     {tech}
                   </span>
@@ -188,7 +192,7 @@ const ProjectCard = ({ project }) => {
           <button
             type="button"
             onClick={() => setShowDetails((prev) => !prev)}
-            className="text-sky-400 text-2xl font-semibold hover:text-sky-300 transition-colors"
+            className="text-sky-400 text-lg font-semibold hover:text-sky-300 transition-colors"
           >
             {showDetails ? 'View Less' : 'View More Details'}
           </button>
@@ -208,35 +212,56 @@ const ProjectCard = ({ project }) => {
 };
 
 const ImageModal = ({ isOpen, onClose, images, activeIndex, setActiveIndex, title }) => {
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        onClose();
+      }
+    };
+
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
   const activeImage = images[activeIndex] || '';
 
-  return (
+  if (typeof document === 'undefined') return null;
+
+  return createPortal((
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/80 px-4"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/85 backdrop-blur-sm px-4 py-6"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
       aria-label={`${title} image viewer`}
     >
       <div
-        className="relative w-full max-w-5xl rounded-xl bg-slate-900 p-4"
+        className="relative w-full max-w-6xl rounded-2xl border border-white/15 bg-slate-900/80 p-4 md:p-6"
         onClick={(e) => e.stopPropagation()}
       >
         <button
           type="button"
           onClick={onClose}
-          className="absolute right-3 top-3 rounded-full bg-slate-800 px-3 py-1 text-slate-200 hover:bg-slate-700"
+          className="absolute right-3 top-3 md:right-4 md:top-4 rounded-full bg-white/10 p-2 text-slate-100 hover:bg-white/20 transition-colors"
           aria-label="Close image viewer"
         >
-          Close
+          <X size={20} />
         </button>
         <div className="flex items-center justify-center">
           <img
             src={activeImage}
             alt={title}
-            className="max-h-[70vh] w-full object-contain"
+            className="max-h-[82vh] w-full object-contain rounded-xl"
           />
         </div>
         {images.length > 1 && (
@@ -264,7 +289,7 @@ const ImageModal = ({ isOpen, onClose, images, activeIndex, setActiveIndex, titl
         )}
       </div>
     </div>
-  );
+  ), document.body);
 };
 
 const Projects = ({ data }) => {
@@ -280,9 +305,9 @@ const Projects = ({ data }) => {
       <div className="max-w-none px-6 md:px-12 xl:px-16">
         {/* Section Header */}
         <div className="text-center mb-14">
-          <h2 className="text-7xl md:text-7xl font-bold text-white mb-5">Projects</h2>
+          <h2 className="text-7xl md:text-4xl font-bold text-white mb-5">Projects</h2>
           <div className="w-28 h-2 bg-sky-500 mx-auto mb-5"></div>
-          <p className="text-slate-200 max-w-9xl mx-auto mb-8 text-3xl md:text-3xl">
+          <p className="text-slate-200 max-w-9xl mx-auto mb-8 text-3xl md:text-xl">
             A showcase of my best work, demonstrating problem-solving abilities and technical expertise
           </p>
 

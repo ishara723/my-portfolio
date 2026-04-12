@@ -5,7 +5,7 @@ const portfolioData = {
 
   personal: {
     name: "Ishara Hewawitharana",
-    title: "Undergraduate Software Engineering Student",
+    title: "Computer Science Undergraduate",
     email: "hewawitharanaishara@gmail.com",
     phone: "+94 768792088",
     location: "Handapangoda, Sri Lanka",
@@ -18,7 +18,7 @@ const portfolioData = {
 
   about: {
     summary:
-      "I am a passionate Software Engineering undergraduate at SLIIT with strong skills in Java, Spring Boot, React, and full-stack development. I enjoy building scalable web applications and continuously improving my problem-solving abilities.",
+      "I am a passionate Computer Science undergraduate at SLIIT with strong skills in Java, Spring Boot, React, and full-stack development. I enjoy building scalable web applications and continuously improving my problem-solving abilities.",
     highlights: [
       "Strong foundation in Object-Oriented Programming",
       "Full-Stack Web Development experience",
@@ -72,23 +72,18 @@ const portfolioData = {
           items: [
             { name: "Java", level: 85 },
             { name: "C", level: 85 },
+            { name: "SQL", level: 80 },
             { name: "JavaScript", level: 80 }
           ]
         },
         {
-          title: "Frontend Development",
+          title: "Web Development",
           items: [
-            { name: "HTML5", level: 85 },
-            { name: "CSS3", level: 85 },
-            { name: "React.js", level: 75 },
-            { name: "Tailwind CSS", level: 75 }
-          ]
-        },
-        {
-          title: "Backend Development",
-          items: [
-            { name: "Spring Boot", level: 80 },
-            { name: "REST APIs", level: 80 }
+            { name: "HTML", level: 85 },
+            { name: "CSS", level: 85 },
+            { name: "React", level: 75 },
+            { name: "Node.js", level: 75 },
+            { name: "Spring Boot", level: 80 }
           ]
         },
         {
@@ -113,13 +108,30 @@ const portfolioData = {
     },
     {
       category: "Tools & Platforms",
-      items: [
-        { name: "Git", level: 80 },
-        { name: "GitHub", level: 80 },
-        { name: "npm", level: 75 },
-        { name: "Postman", level: 75 },
-        { name: "VS Code", level: 85 }
-      ]
+      subcategories: [
+        {
+          title: "Version Control",
+          items: [
+            { name: "GitHub", level: 80 },
+          ]
+        },
+        {
+          title: "Methodologies",
+          items: [
+            { name: "Agile", level: 85 },
+            { name: "Scrum", level: 75 }
+          ]
+        },
+        {
+          title: "Debugging & Testing",
+          items: [
+            { name: "Postman", level: 75 },
+            { name: "JUnit", level: 80 },
+            { name: "Selenium", level: 80 }
+          ]
+        }
+      ],
+
     }
   ],
 
@@ -159,7 +171,8 @@ const portfolioData = {
       ],
       outcome: "Successfully implemented an automated waste segregation system.",
       links: {
-        github: "https://github.com/ishara723"
+        github: "https://github.com/ishara723",
+        demo: "https://drive.google.com/file/d/1-Lxc9gx4iHBNILf8hx272sN-37dQr9Uv/view?usp=sharing"
       },
       date: "2024",
       featured: false
@@ -178,7 +191,14 @@ const portfolioData = {
           manual workload and enhance operational efficiency, providing a modern, organized, and user-friendly 
           approach to library administration.</p>,
       images: [
-        "/images/projects/flower.jpg"
+        "/images/projects/system2.0.jpg",
+        "/images/projects/system2.1.jpg",
+        "/images/projects/system2.2.jpg",
+        "/images/projects/system2.3.jpg",
+        "/images/projects/system2.4.jpg",
+        "/images/projects/system2.5.jpg",
+        "/images/projects/system2.6.jpg"
+
       ],
       technologies: ["Java", "Spring Boot", "MongoDB", "React.js"],
       features: [
@@ -192,7 +212,8 @@ const portfolioData = {
       ],
       outcome: "Streamlined library operations and improved user experience.",
       links: {
-        github: "https://github.com/Kavindi-K/SE-LibraryManagementSystem.git"
+        github: "https://github.com/Kavindi-K/SE-LibraryManagementSystem.git",
+        demo: "https://drive.google.com/file/d/1FEA8UD3SkR6AfIjCPYGG5VnLAGIW5j5k/view?usp=sharing"
       },
       date: "2025",
       featured: true
@@ -287,7 +308,7 @@ const portfolioData = {
       ],
       outcome: "Improved personal branding and online presence.",
       links: {
-        github: "https://github.com/ishara723"
+        github: "https://github.com/ishara723/my-portfolio.git"
       },
       date: "2024",
       featured: true
