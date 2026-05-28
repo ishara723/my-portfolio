@@ -171,7 +171,6 @@ const portfolioData = {
       ],
       outcome: "Successfully implemented an automated waste segregation system.",
       links: {
-        github: "https://github.com/ishara723",
         demo: "https://drive.google.com/file/d/1-Lxc9gx4iHBNILf8hx272sN-37dQr9Uv/view?usp=sharing"
       },
       date: "2024",
@@ -286,10 +285,11 @@ const portfolioData = {
       ],
       outcome: "Successfully developed a DSL compiler for automated HTTP API testing, improving test automation efficiency and maintainability.",
       links: {
-        github: "https://github.com/ishara723/TestLang-Compiler.git"
+        github: "https://github.com/ishara723/TestLang-Compiler.git",
+        demo: "https://drive.google.com/file/d/18zV93EDd_z02Qno6UrXrvUSLJ71h7Sxk/view?usp=sharing"
       },
       date: "2025",
-      featured: true
+      featured: false
     },
     {
       id: 5,
@@ -298,7 +298,10 @@ const portfolioData = {
       description:
         "Designed and developed a responsive portfolio website to showcase projects, skills, and achievements.",
       images: [
-        "/images/projects/flower.jpg"
+        "/images/projects/system5.0.png",
+        "/images/projects/system5.1.png",
+        "/images/projects/system5.2.png",
+        "/images/projects/system5.3.png"
       ],
       technologies: ["React", "Tailwind CSS"],
       features: [
@@ -310,9 +313,89 @@ const portfolioData = {
       links: {
         github: "https://github.com/ishara723/my-portfolio.git"
       },
-      date: "2024",
-      featured: true
-    }
+      date: "2025",
+      featured: false
+    },
+    {
+  id: 6,
+  name: "Coordina – Community Collaboration & Resource Platform (CCRP)",
+  tagline: "Full-Stack Community Collaboration & Resource Management Platform",
+  description:
+    <p>Coordina (CCRP) is a full-stack web application developed to help community organizations, NGOs, schools, temples, and societies manage events, donation drives, resource bookings, tasks, forms, and communication through a single secure platform. Built using React.js, ASP.NET Web API, and MySQL, the system replaces fragmented coordination methods such as phone calls, spreadsheets, and messaging apps. A key innovation of the platform is its synchronized multi-level calendar system with real-time updates and role-based collaboration, improving transparency, scheduling efficiency, and community engagement.</p>,
+  images: [
+    "/images/projects/system6.0.png",
+    "/images/projects/system6.1.png",
+    "/images/projects/system6.2.png",
+    "/images/projects/system6.3.png",
+    "/images/projects/system6.4.png",
+    "/images/projects/system6.5.png",
+    "/images/projects/system6.6.png"
+  ],
+  technologies: [
+    "React.js",
+    "ASP.NET Web API",
+    "ADO.NET",
+    "Supabase",
+    "SignalR",
+    "Docker",
+    "Azure",
+    "GitHub Actions"
+  ],
+  features: [
+    "User & Entity Management: Manage organizations, events, and donation drives with secure role-based access.",
+    "Real-Time Calendar Synchronization: Multi-level synchronized calendars with live updates using SignalR.",
+    "Resource Booking System: Prevent double bookings with real-time conflict detection and approval workflows.",
+    "Task & Collaboration Management: Assign tasks, track progress, and communicate using dedicated chat channels.",
+    "Forms & Data Collection: Drag-and-drop form builder with response tracking and export options.",
+    "Donation Management: Track donation goals, pledges, and progress through live dashboards.",
+    "Analytics & Reporting: Generate PDF, CSV, and Excel reports with visual dashboards and performance metrics.",
+    "CI/CD & Deployment: Dockerized deployment on Azure with automated GitHub Actions pipeline."
+  ],
+  outcome:
+    "Improved coordination, transparency, and operational efficiency for community organizations through a centralized real-time management platform.",
+  links: {
+    github: "https://github.com/Thejandeera/coordina-group-16.git",
+    demo: "https://www.youtube.com/watch?v=lruYeOEww6g"
+  },
+  date: "2026",
+  featured: true
+},
+{
+  id: 7,
+  name: "Tropical Reserve Rescue",
+  tagline: "AI-Powered Wildlife Rescue & Pathfinding Simulation Game",
+  description:
+    <p>Tropical Reserve Rescue is a 3D wildlife rescue simulation game developed in Unity, set in a storm-affected Sri Lankan eco-tourism reserve. The project combines game development, artificial intelligence, and physics-based interaction to simulate autonomous rescue operations. Players control a monster truck to remove fallen trees and clear blocked routes while AI rescue drones dynamically recalculate paths to rescue stranded hikers and endangered animals. The system integrates custom graph generation, A* pathfinding, real-time environmental adaptation, smooth drone animations, and interactive debugging tools to create an immersive and intelligent rescue experience.</p>,
+  images: [
+    "/images/projects/flower.jpg"
+  ],
+  technologies: [
+    "Unity",
+    "C#",
+    "Blender",
+    "A* Pathfinding",
+    "BFS",
+    "Raycasting",
+    "Physics Engine"
+  ],
+  features: [
+    "3D Environment Design: Built an immersive jungle rescue environment with terrain sculpting, lighting, and environmental effects.",
+    "Custom Graph Generation: Created a mathematical node-based graph using raycasting to identify walkable and blocked areas.",
+    "Dynamic Pathfinding: Implemented A* search with Euclidean heuristic and BFS as a backup search algorithm.",
+    "Physics-Based Interaction: Enabled monster truck and heavy log interactions using Rigidbody and collision physics.",
+    "Real-Time Environment Adaptation: Updated graph nodes dynamically when obstacles were removed, allowing drones to recalculate routes instantly.",
+    "Drone Animation & Movement: Developed smooth drone navigation using interpolation and rotation techniques.",
+    "Debug Visualization: Implemented toggleable path and search visualization using Unity LineRenderer for algorithm debugging."
+  ],
+  outcome:
+    "Created an interactive AI-driven rescue simulation demonstrating real-time pathfinding, environmental adaptation, and advanced game development techniques.",
+  links: {
+    github: "https://github.com/Thejandeera/IS-GV-Assignment.git",
+    demo: "https://www.youtube.com/watch?v=oS8EPMjWPl0"
+  },
+  date: "2026",
+  featured: true
+}
   ],
 
   /* ================= CERTIFICATIONS ================= */

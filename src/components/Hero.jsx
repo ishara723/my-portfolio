@@ -151,8 +151,8 @@ const Hero = ({ data }) => {
             {/* Download Resume */}
             <div className="flex justify-center">
               <a
-                href="/documents/CV.pdf"
-                download
+                href={`${process.env.PUBLIC_URL}/documents/ISHARA%20HEWAVITHARANA.pdf`}
+                download="ISHARA HEWAVITHARANA.pdf"
                 className="inline-flex items-center gap-2.5 bg-white text-blue-600 px-6 py-3 text-base md:text-lg rounded-lg hover:bg-blue-50 transition-all transform hover:scale-105 font-semibold shadow-xl"
               >
                 <Download size={20} />
