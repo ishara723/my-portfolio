@@ -4,7 +4,7 @@ import portfolioData from './data/portfolioData';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
-//import Experience from './components/Experience';
+// import Experience from './components/Experience';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Education from './components/Education';
@@ -12,24 +12,24 @@ import Certifications from './components/Certifications';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
+const sections = [
+  { id: 'about', label: 'About' },
+  // { id: 'experience', label: 'Experience' },
+  { id: 'skills', label: 'Skills' },
+  { id: 'projects', label: 'Projects' },
+  { id: 'education', label: 'Education' },
+  { id: 'certifications', label: 'Certifications' },
+  { id: 'contact', label: 'Contact' }
+];
+
 function App() {
   const [activeSection, setActiveSection] = useState('hero');
-  
-  const sections = [
-    { id: 'about', label: 'About' },
-   // { id: 'experience', label: 'Experience' },
-    { id: 'skills', label: 'Skills' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'education', label: 'Education' },
-    { id: 'certifications', label: 'Certifications' },
-    { id: 'contact', label: 'Contact' }
-  ];
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 100;
       const heroSection = document.getElementById('hero');
-      
+
       if (heroSection && scrollPosition < heroSection.offsetHeight) {
         setActiveSection('hero');
         return;
@@ -37,9 +37,14 @@ function App() {
 
       for (const section of sections) {
         const element = document.getElementById(section.id);
+
         if (element) {
           const { offsetTop, offsetHeight } = element;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+
+          if (
+            scrollPosition >= offsetTop &&
+            scrollPosition < offsetTop + offsetHeight
+          ) {
             setActiveSection(section.id);
             break;
           }
@@ -48,17 +53,21 @@ function App() {
     };
 
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [sections]);
+    handleScroll(); // Set initial active section
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <div className="min-h-screen bg-slate-50">
-      <Header 
-        activeSection={activeSection} 
+      <Header
+        activeSection={activeSection}
         setActiveSection={setActiveSection}
         sections={sections}
       />
-      
+
       <main>
         <Hero data={portfolioData} />
         <About data={portfolioData} />
@@ -69,7 +78,7 @@ function App() {
         <Certifications data={portfolioData} />
         <Contact data={portfolioData} />
       </main>
-      
+
       <Footer data={portfolioData} />
     </div>
   );

@@ -1,7 +1,7 @@
 // src/components/Footer.jsx
 
 import React from 'react';
-import { Heart, ArrowUp, Mail, Linkedin, Github } from 'lucide-react';
+import { ArrowUp, Mail, Linkedin, Github } from 'lucide-react';
 
 const Footer = ({ data }) => {
   const { personal, social } = data;
