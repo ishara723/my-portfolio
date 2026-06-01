@@ -112,6 +112,22 @@ The portfolio uses Tailwind CSS. To change colors, update the color classes in t
 - Primary color: `blue-600` → Change to your preferred color
 - Accent colors: Various gradient combinations
 
+### 5. Enable Contact Form Email Delivery
+
+The contact form can post directly to a hosted form endpoint (Formspree) so messages arrive in your inbox without a backend or template.
+
+1. Create a Formspree form at https://formspree.io and obtain the form endpoint (looks like `https://formspree.io/f/{formId}`).
+
+2. Add this environment variable in a `.env.local` file at the project root:
+
+```bash
+REACT_APP_FORMSPREE_ENDPOINT=https://formspree.io/f/your_form_id
+```
+
+3. Restart the dev server so React can read the new environment variables.
+
+The form will POST JSON with `name`, `email`, `subject`, and `message` to the endpoint. If you'd rather use a different provider (EmailJS or a custom backend), tell me and I'll switch the code accordingly.
+
 ## 📦 Building for Production
 
 To create a production-ready build:

@@ -1,14 +1,12 @@
 // src/components/Contact.jsx
 
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Mail,
   Phone,
   MapPin,
   Linkedin,
   Github,
-  Send,
-  CheckCircle
 } from 'lucide-react';
 
 const Contact = () => {
@@ -24,29 +22,7 @@ const Contact = () => {
     github: "https://github.com/ishara723"
   };
 
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    setIsSubmitted(true);
-
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    }, 3000);
-  };
+  // Contact form removed per request; only static contact info remains.
 
   const contactMethods = [
     {
@@ -87,9 +63,9 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-10">
-          {/* Left */}
-          <div>
+        <div className="flex justify-center">
+          {/* Centered column */}
+          <div className="w-full max-w-2xl">
             <h3 className="text-xl font-bold text-white mb-6">
               Contact Information
             </h3>
@@ -165,69 +141,6 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Right */}
-          <div className="bg-[#0f2232] border border-sky-500/25 rounded-2xl shadow-md p-8">
-            <h3 className="text-xl font-bold text-white mb-6">
-              Send a Message
-            </h3>
-
-            {isSubmitted ? (
-              <div className="text-center py-10">
-                <CheckCircle size={52} className="text-green-400 mx-auto mb-3" />
-                <h4 className="text-xl font-bold text-white">Message Sent!</h4>
-                <p className="text-slate-300 text-base">
-                  Thank you — I’ll get back to you soon.
-                </p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-5">
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Your Name"
-                  required
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="w-full p-4 border border-sky-500/25 rounded-xl bg-slate-900 text-white placeholder:text-slate-400 text-base"
-                />
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Your Email"
-                  required
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full p-4 border border-sky-500/25 rounded-xl bg-slate-900 text-white placeholder:text-slate-400 text-base"
-                />
-                <input
-                  type="text"
-                  name="subject"
-                  placeholder="Subject"
-                  required
-                  value={formData.subject}
-                  onChange={handleChange}
-                  className="w-full p-4 border border-sky-500/25 rounded-xl bg-slate-900 text-white placeholder:text-slate-400 text-base"
-                />
-                <textarea
-                  name="message"
-                  rows="4"
-                  placeholder="Your Message"
-                  required
-                  value={formData.message}
-                  onChange={handleChange}
-                  className="w-full p-4 border border-sky-500/25 rounded-xl bg-slate-900 text-white placeholder:text-slate-400 text-base"
-                />
-
-                <button
-                  type="submit"
-                  className="w-full bg-sky-500 text-slate-900 py-4 rounded-xl flex items-center justify-center gap-2 hover:bg-sky-400 transition text-lg font-semibold"
-                >
-                  <Send size={18} />
-                  Send Message
-                </button>
-              </form>
-            )}
-          </div>
         </div>
       </div>
     </section>

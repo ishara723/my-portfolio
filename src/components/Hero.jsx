@@ -1,11 +1,21 @@
 // src/components/Hero.jsx
 
 import React, { useEffect, useState } from 'react';
-import { Mail, Phone, Linkedin, Github, Download, MapPin, Globe, X } from 'lucide-react';
+import { Linkedin, Github, Download, MapPin, Globe, X } from 'lucide-react';
 
 const Hero = ({ data }) => {
   const { personal } = data;
   const [isImageOpen, setIsImageOpen] = useState(false);
+
+  const normalizeExternalUrl = (value) => {
+    if (!value) {
+      return undefined;
+    }
+
+    return value.startsWith('http://') || value.startsWith('https://')
+      ? value
+      : `https://${value}`;
+  };
 
   useEffect(() => {
     if (!isImageOpen) {
@@ -30,27 +40,15 @@ const Hero = ({ data }) => {
 
   const contactButtons = [
     {
-      icon: Mail,
-      label: 'Email',
-      href: `mailto:${personal.email}`,
-      color: 'bg-white text-blue-600 hover:bg-blue-50',
-    },
-    {
-      icon: Phone,
-      label: 'Call',
-      href: `tel:${personal.phone}`,
-      color: 'bg-white text-blue-600 hover:bg-blue-50',
-    },
-    {
       icon: Linkedin,
       label: 'LinkedIn',
-      href: `https://${personal.linkedin}`,
+      href: normalizeExternalUrl(personal.linkedin),
       color: 'bg-white text-blue-600 hover:bg-blue-50',
     },
     {
       icon: Github,
       label: 'GitHub',
-      href: `https://${personal.github}`,
+      href: normalizeExternalUrl(personal.github),
       color: 'bg-white text-blue-600 hover:bg-blue-50',
     },
   ];
@@ -146,7 +144,7 @@ const Hero = ({ data }) => {
                   </a>
                 );
               })}
-            </div>
+            </div> 
 
             {/* Download Resume */}
             <div className="flex justify-center">
