@@ -402,6 +402,46 @@ const portfolioData = {
   },
   date: "2026",
   featured: true
+},
+{
+  id: 8,
+  name: "CIRO Mobile Phone Management System",
+  tagline: "Full-Stack Mobile Phone Shop & Repair Tracking System",
+  description:
+    <p>The CIRO Mobile Phone Management System is a full-stack web application developed to manage mobile phone shop operations and track repair progress efficiently. Developed collaboratively by a team, the system provides administrators with a secure dashboard to manage products, create repair jobs, upload repair-related images, and update repair statuses. Each repair job is assigned a unique tracking number, allowing customers to monitor repair progress online without authentication. The workflow is organized through structured stages such as In Queue, Processing, and Repaired, improving transparency and operational efficiency. Built using a RESTful architecture, the application ensures smooth frontend-backend integration and supports efficient business management for mobile phone repair services.</p>,
+  images: [
+    "/images/projects/ciro1.jpg",
+    "/images/projects/ciro2.jpg",
+    "/images/projects/ciro3.jpg",
+    "/images/projects/ciro4.jpg",
+    "/images/projects/ciro5.jpg"
+  ],
+  technologies: [
+    "React.js",
+    "Spring Boot",
+    "Java",
+    "MySQL",
+    "REST API",
+    "Postman"
+  ],
+  features: [
+    "Product Management: Administrators can add, update, and manage mobile phone products through a secure dashboard.",
+    "Repair Job Tracking: Create repair jobs with unique tracking numbers for customer progress monitoring.",
+    "Repair Status Workflow: Structured repair stages including In Queue, Processing, and Repaired.",
+    "Customer Progress Checking: Customers can track repair progress online without requiring authentication.",
+    "Image Upload Support: Administrators can upload repair-related images for better repair documentation.",
+    "Automatic Date Updates: System automatically updates relevant repair dates when statuses change.",
+    "RESTful Architecture: Smooth frontend-backend integration using REST APIs for efficient communication.",
+    "Secure Admin Dashboard: Role-based management system for administrative operations."
+  ],
+  outcome:
+    "Improved mobile shop management and repair tracking efficiency while strengthening full-stack development, REST API, database, and team collaboration skills.",
+  links: {
+    github: "YOUR_GITHUB_LINK",
+    demo: "YOUR_DEMO_LINK"
+  },
+  date: "2025",
+  featured: false
 }
   ],
 
