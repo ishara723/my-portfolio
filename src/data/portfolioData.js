@@ -235,7 +235,11 @@ const portfolioData = {
           45ms average latency, promoting reliable distributed storage through intelligent automation and self-healing 
           capabilities.</p>,
       images: [
-        "/images/projects/flower.jpg"
+        "/images/projects/system3.0.png",
+        "/images/projects/system3.1.png",
+        "/images/projects/system3.2.png",
+        "/images/projects/system3.3.png",
+        "/images/projects/system3.4.png"
       ],
       technologies: ["Python", "Raft Consensus Algorithm", "TCP Socket Communication", "Vector Clock Conflict Resolution", "NTP Synchronization"],
       features: [
