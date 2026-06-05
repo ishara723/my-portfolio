@@ -359,7 +359,10 @@ const portfolioData = {
   description:
     <p>Tropical Reserve Rescue is a 3D wildlife rescue simulation game developed in Unity, set in a storm-affected Sri Lankan eco-tourism reserve. The project combines game development, artificial intelligence, and physics-based interaction to simulate autonomous rescue operations. Players control a monster truck to remove fallen trees and clear blocked routes while AI rescue drones dynamically recalculate paths to rescue stranded hikers and endangered animals. The system integrates custom graph generation, A* pathfinding, real-time environmental adaptation, smooth drone animations, and interactive debugging tools to create an immersive and intelligent rescue experience.</p>,
   images: [
-    "/images/projects/flower.jpg"
+    "/images/projects/system7.0.png",
+    "/images/projects/system7.1.png",
+    "/images/projects/system7.2.png",
+    "/images/projects/system7.3.png"
   ],
   technologies: [
     "Unity",
