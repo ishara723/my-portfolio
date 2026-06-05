@@ -53,11 +53,11 @@ const Contact = () => {
       <div className="max-w-6xl mx-auto px-6 md:px-10 xl:px-12">
         {/* Header */}
         <div className="text-center mb-14">
-          <h2 className="text-7xl md:text-4xl font-bold text-white mb-5">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-5">
             Get In Touch
           </h2>
           <div className="w-28 h-2 bg-sky-500 mx-auto mb-5"></div>
-          <p className="text-slate-200 max-w-9xl mx-auto text-3xl md:text-xl">
+          <p className="text-slate-200 max-w-9xl mx-auto text-lg md:text-xl">
             Interested in internships, collaborations, or projects?  
             Feel free to reach out I’d love to connect.
           </p>

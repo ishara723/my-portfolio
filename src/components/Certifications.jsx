@@ -68,11 +68,11 @@ const Certifications = () => {
       <div className="max-w-none px-6 md:px-12 xl:px-16">
         {/* Header */}
         <div className="text-center mb-14">
-          <h2 className="text-8xl md:text-4xl font-bold text-white mb-5">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-5">
             Certifications
           </h2>
           <div className="w-28 h-2 bg-sky-500 mx-auto mb-5"></div>
-          <p className="text-slate-200 max-w-6xl mx-auto text-4xl md:text-xl">
+          <p className="text-slate-200 max-w-6xl mx-auto text-lg md:text-xl">
             Courses and certifications completed to strengthen my technical foundation and support my career growth in software development.
           </p>
         </div>

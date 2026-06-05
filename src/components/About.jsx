@@ -11,7 +11,7 @@ const About = ({ data }) => {
       <div className="max-w-none px-6 md:px-12 xl:px-16">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <h2 className="text-7xl md:text-4xl font-bold text-white">
+          <h2 className="text-3xl md:text-4xl font-bold text-white">
             About <span className="text-sky-400">Me</span>
           </h2>
           <div className="w-24 h-2 bg-sky-500 mx-auto mt-4"></div>
@@ -35,16 +35,16 @@ const About = ({ data }) => {
               </div>
             </div>
 
-            <h3 className="text-4xl md:text-3xl font-bold text-white mb-4">
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
               {personal.title || 'Frontend Developer'}
             </h3>
-            <p className="text-slate-200 leading-relaxed max-w-9xl text-2xl md:text-xl">
+            <p className="text-slate-200 leading-relaxed max-w-9xl text-lg md:text-xl">
               {about.summary ||
                 'I’m an undergraduate Computer Science student with a strong interest in software development and problem-solving. I enjoy building full-stack applications using Java, Spring Boot, React, and databases, and I’m passionate about writing clean, efficient, and maintainable code.'}
             </p>
 
             {isExpanded && (
-              <div className="mt-10 text-slate-200 max-w-5xl text-2xl md:text-xl">
+              <div className="mt-10 text-slate-200 max-w-5xl text-lg md:text-xl">
                 {about.highlights && about.highlights.length > 0 && (
                   <ul className="grid gap-3 text-left">
                     {about.highlights.map((highlight, index) => (

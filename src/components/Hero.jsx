@@ -84,7 +84,7 @@ const Hero = ({ data }) => {
             </div>
 
             {/* Name */}
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                    <h1 className="text-3xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
               Hi, I&apos;m{' '}
               <span className="bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
                 {personal.name}
@@ -151,7 +151,7 @@ const Hero = ({ data }) => {
               <a
                 href={`${process.env.PUBLIC_URL}/documents/ISHARA%20HEWAVITHARANA.pdf`}
                 download="ISHARA HEWAVITHARANA.pdf"
-                className="inline-flex items-center gap-2.5 bg-white text-blue-600 px-6 py-3 text-base md:text-lg rounded-lg hover:bg-blue-50 transition-all transform hover:scale-105 font-semibold shadow-xl"
+                        className="inline-flex items-center gap-2.5 bg-white text-blue-600 px-4 md:px-6 py-2 text-sm md:text-lg rounded-lg hover:bg-blue-50 transition-all transform hover:scale-105 font-semibold shadow-xl"
               >
                 <Download size={20} />
                 Download Resume

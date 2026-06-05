@@ -133,7 +133,7 @@ const ProjectCard = ({ project }) => {
       <div className="p-6">
         {/* Header */}
         <div className="mb-3">
-          <h3 className="text-2xl font-bold text-white mb-1 group-hover:text-sky-400 transition-colors">
+          <h3 className="text-xl md:text-2xl font-bold text-white mb-1 group-hover:text-sky-400 transition-colors">
             {project.name}
           </h3>
           <p className="text-lg text-sky-400 font-medium">{project.tagline}</p>
@@ -305,9 +305,9 @@ const Projects = ({ data }) => {
       <div className="max-w-none px-6 md:px-12 xl:px-16">
         {/* Section Header */}
         <div className="text-center mb-14">
-          <h2 className="text-7xl md:text-4xl font-bold text-white mb-5">Projects</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-5">Projects</h2>
           <div className="w-28 h-2 bg-sky-500 mx-auto mb-5"></div>
-          <p className="text-slate-200 max-w-9xl mx-auto mb-8 text-3xl md:text-xl">
+          <p className="text-slate-200 max-w-9xl mx-auto mb-8 text-lg md:text-xl">
             A showcase of my best work, demonstrating problem-solving abilities and technical expertise
           </p>
 

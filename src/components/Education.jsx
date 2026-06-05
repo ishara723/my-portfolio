@@ -130,11 +130,11 @@ const Education = () => {
       <div className="max-w-6xl mx-auto px-6 md:px-10 xl:px-12">
         {/* Header */}
         <div className="text-center mb-14">
-          <h2 className="text-8xl md:text-4xl font-bold text-white mb-5">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-5">
             Education
           </h2>
           <div className="w-28 h-2 bg-sky-500 mx-auto mb-5"></div>
-          <p className="text-slate-200 max-w-5xl mx-auto text-4xl md:text-xl">
+          <p className="text-slate-200 max-w-5xl mx-auto text-lg md:text-xl">
             My academic background and ongoing learning journey in computer science
           </p>
         </div>

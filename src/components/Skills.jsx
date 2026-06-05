@@ -131,7 +131,7 @@ const Skills = ({ data }) => {
         
         {/* ===== Section Header ===== */}
         <div className="text-center mb-16">
-          <h2 className="text-6xl md:text-4xl font-bold text-white">
+          <h2 className="text-3xl md:text-4xl font-bold text-white">
             Skills & Expertise
           </h2>
           <div className="w-24 h-1 bg-sky-500 mx-auto mt-5"></div>
@@ -153,7 +153,7 @@ const Skills = ({ data }) => {
         {toolsAndPlatforms && toolsAndPlatforms.length > 0 && (
           <>
             <div className="text-center mb-12">
-              <h3 className="text-4xl md:text-4xl font-bold text-white">
+              <h3 className="text-2xl md:text-4xl font-bold text-white">
                 Tools & Platforms
               </h3>
               <div className="w-20 h-1 bg-sky-500 mx-auto mt-4"></div>
