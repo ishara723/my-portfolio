@@ -156,45 +156,90 @@ const portfolioData = {
 
   projects: [
     {
-      id: 1,
-      name: "Automated Waste Disposal System",
-      tagline: "Raspberry Pi Powered Smart Waste Segregation",
+      id: 6,
+      name: "Coordina – Community Collaboration & Resource Platform (CCRP)",
+      tagline: "Full-Stack Community Collaboration & Resource Management Platform",
       description:
-        <p>This project presents an AI-driven automated waste segregation system that utilizes computer vision and 
-          embedded systems to improve recycling efficiency. The system is powered by a Raspberry Pi integrated with 
-          a camera module to capture real-time images of waste items. Using OpenCV-based image processing and 
-          object detection techniques, the system classifies waste into predefined categories such as plastic, metal, 
-          and glass.
-
-          Once the object is identified, control signals are sent to servo motors to automatically open the 
-          corresponding bin, ensuring accurate and contactless disposal. The solution enhances waste management 
-          by reducing human error, promoting proper recycling practices, and contributing to environmental 
-          sustainability through intelligent automation.</p>,
+        <p>Coordina (CCRP) is a full-stack web application developed to help community organizations, NGOs, schools, temples, and societies manage events, donation drives, resource bookings, tasks, forms, and communication through a single secure platform. Built using React.js, ASP.NET Web API, and MySQL, the system replaces fragmented coordination methods such as phone calls, spreadsheets, and messaging apps. A key innovation of the platform is its synchronized multi-level calendar system with real-time updates and role-based collaboration, improving transparency, scheduling efficiency, and community engagement.</p>,
       images: [
-        "/images/projects/system1,0.jpeg",
-        "/images/projects/system1.1.jpeg",
-        "/images/projects/system1.2.png"
+        "/images/projects/system6.0.png",
+        "/images/projects/system6.1.png",
+        "/images/projects/system6.2.png",
+        "/images/projects/system6.3.png",
+        "/images/projects/system6.4.png",
+        "/images/projects/system6.5.png",
+        "/images/projects/system6.6.png"
       ],
-      technologies: ["Raspberry Pi 3", "Raspberry Pi Camera Module", "OpenCV", "Python", "Servo Motors", "Computer Vision Algorithms"],
+      technologies: [
+        "React.js",
+        "ASP.NET Web API",
+        "ADO.NET",
+        "Supabase",
+        "SignalR",
+        "Docker",
+        "Azure",
+        "GitHub Actions"
+      ],
       features: [
-        "Real-Time Object Detection – Instantly identifies waste items using computer vision.",
-        "Automated Bin Selection – Automatically determines the correct category (plastic, metal, glass).",
-        "Motorized Lid Control – Opens the appropriate bin using servo motors.",
-        "Contactless Operation – Reduces human interaction and improves hygiene.",
-        "Embedded System Integration – Fully powered by Raspberry Pi for compact deployment.",
-        "High Classification Accuracy – Uses image processing techniques for reliable sorting.",
-        "Environmental Impact – Promotes proper recycling practices and reduces waste.",
-        "Scalable Design – Can be expanded to include additional waste categories and features in the future.",
+        "User & Entity Management: Manage organizations, events, and donation drives with secure role-based access.",
+        "Real-Time Calendar Synchronization: Multi-level synchronized calendars with live updates using SignalR.",
+        "Resource Booking System: Prevent double bookings with real-time conflict detection and approval workflows.",
+        "Task & Collaboration Management: Assign tasks, track progress, and communicate using dedicated chat channels.",
+        "Forms & Data Collection: Drag-and-drop form builder with response tracking and export options.",
+        "Donation Management: Track donation goals, pledges, and progress through live dashboards.",
+        "Analytics & Reporting: Generate PDF, CSV, and Excel reports with visual dashboards and performance metrics.",
+        "CI/CD & Deployment: Dockerized deployment on Azure with automated GitHub Actions pipeline."
       ],
-      outcome: "Successfully implemented an automated waste segregation system.",
+      outcome:
+        "Improved coordination, transparency, and operational efficiency for community organizations through a centralized real-time management platform.",
       links: {
-        demo: "https://drive.google.com/file/d/1-Lxc9gx4iHBNILf8hx272sN-37dQr9Uv/view?usp=sharing"
+        github: "https://github.com/Thejandeera/coordina-group-16.git",
+        demo: "https://www.youtube.com/watch?v=lruYeOEww6g"
       },
-      date: "2024",
-      featured: false
+      date: "2026",
+      featured: true
     },
     {
-      id: 2,
+      id: 7,
+      name: "Tropical Reserve Rescue",
+      tagline: "AI-Powered Wildlife Rescue & Pathfinding Simulation Game",
+      description:
+        <p>Tropical Reserve Rescue is a 3D wildlife rescue simulation game developed in Unity, set in a storm-affected Sri Lankan eco-tourism reserve. The project combines game development, artificial intelligence, and physics-based interaction to simulate autonomous rescue operations. Players control a monster truck to remove fallen trees and clear blocked routes while AI rescue drones dynamically recalculate paths to rescue stranded hikers and endangered animals. The system integrates custom graph generation, A* pathfinding, real-time environmental adaptation, smooth drone animations, and interactive debugging tools to create an immersive and intelligent rescue experience.</p>,
+      images: [
+        "/images/projects/system7.0.png",
+        "/images/projects/system7.1.png",
+        "/images/projects/system7.2.png",
+        "/images/projects/system7.3.png"
+      ],
+      technologies: [
+        "Unity",
+        "C#",
+        "Blender",
+        "A* Pathfinding",
+        "BFS",
+        "Raycasting",
+        "Physics Engine"
+      ],
+      features: [
+        "3D Environment Design: Built an immersive jungle rescue environment with terrain sculpting, lighting, and environmental effects.",
+        "Custom Graph Generation: Created a mathematical node-based graph using raycasting to identify walkable and blocked areas.",
+        "Dynamic Pathfinding: Implemented A* search with Euclidean heuristic and BFS as a backup search algorithm.",
+        "Physics-Based Interaction: Enabled monster truck and heavy log interactions using Rigidbody and collision physics.",
+        "Real-Time Environment Adaptation: Updated graph nodes dynamically when obstacles were removed, allowing drones to recalculate routes instantly.",
+        "Drone Animation & Movement: Developed smooth drone navigation using interpolation and rotation techniques.",
+        "Debug Visualization: Implemented toggleable path and search visualization using Unity LineRenderer for algorithm debugging."
+      ],
+      outcome:
+        "Created an interactive AI-driven rescue simulation demonstrating real-time pathfinding, environmental adaptation, and advanced game development techniques.",
+      links: {
+        github: "https://github.com/Thejandeera/IS-GV-Assignment.git",
+        demo: "https://www.youtube.com/watch?v=oS8EPMjWPl0"
+      },
+      date: "2026",
+      featured: true
+    },
+    {
+      id: 3,
       name: "Sarasavi Library Management System",
       tagline: "Comprehensive Library Management Solution",
       description:
@@ -234,9 +279,8 @@ const portfolioData = {
       date: "2025",
       featured: true
     },
-
     {
-      id: 3,
+      id: 4,
       name: "Distributed File Storage System",
       tagline: "Raft-Based Distributed Storage with Vector Clock Consistency and Sub-Second Failure Detection",
       description:
@@ -276,9 +320,8 @@ const portfolioData = {
       date: "2025",
       featured: true
     },
-
-     {
-      id: 4,
+    {
+      id: 5,
       name: "TestLang++: A DSL Compiler for Automated HTTP API Testing",
       tagline: "DSL-Driven HTTP API Testing with Automated JUnit 5 Code Generation",
       description:
@@ -316,88 +359,70 @@ const portfolioData = {
       featured: false
     },
     {
-  id: 5,
-  name: "Coordina – Community Collaboration & Resource Platform (CCRP)",
-  tagline: "Full-Stack Community Collaboration & Resource Management Platform",
-  description:
-    <p>Coordina (CCRP) is a full-stack web application developed to help community organizations, NGOs, schools, temples, and societies manage events, donation drives, resource bookings, tasks, forms, and communication through a single secure platform. Built using React.js, ASP.NET Web API, and MySQL, the system replaces fragmented coordination methods such as phone calls, spreadsheets, and messaging apps. A key innovation of the platform is its synchronized multi-level calendar system with real-time updates and role-based collaboration, improving transparency, scheduling efficiency, and community engagement.</p>,
-  images: [
-    "/images/projects/system6.0.png",
-    "/images/projects/system6.1.png",
-    "/images/projects/system6.2.png",
-    "/images/projects/system6.3.png",
-    "/images/projects/system6.4.png",
-    "/images/projects/system6.5.png",
-    "/images/projects/system6.6.png"
-  ],
-  technologies: [
-    "React.js",
-    "ASP.NET Web API",
-    "ADO.NET",
-    "Supabase",
-    "SignalR",
-    "Docker",
-    "Azure",
-    "GitHub Actions"
-  ],
-  features: [
-    "User & Entity Management: Manage organizations, events, and donation drives with secure role-based access.",
-    "Real-Time Calendar Synchronization: Multi-level synchronized calendars with live updates using SignalR.",
-    "Resource Booking System: Prevent double bookings with real-time conflict detection and approval workflows.",
-    "Task & Collaboration Management: Assign tasks, track progress, and communicate using dedicated chat channels.",
-    "Forms & Data Collection: Drag-and-drop form builder with response tracking and export options.",
-    "Donation Management: Track donation goals, pledges, and progress through live dashboards.",
-    "Analytics & Reporting: Generate PDF, CSV, and Excel reports with visual dashboards and performance metrics.",
-    "CI/CD & Deployment: Dockerized deployment on Azure with automated GitHub Actions pipeline."
-  ],
-  outcome:
-    "Improved coordination, transparency, and operational efficiency for community organizations through a centralized real-time management platform.",
-  links: {
-    github: "https://github.com/Thejandeera/coordina-group-16.git",
-    demo: "https://www.youtube.com/watch?v=lruYeOEww6g"
-  },
-  date: "2026",
-  featured: true
-},
-{
-  id: 6,
-  name: "Tropical Reserve Rescue",
-  tagline: "AI-Powered Wildlife Rescue & Pathfinding Simulation Game",
-  description:
-    <p>Tropical Reserve Rescue is a 3D wildlife rescue simulation game developed in Unity, set in a storm-affected Sri Lankan eco-tourism reserve. The project combines game development, artificial intelligence, and physics-based interaction to simulate autonomous rescue operations. Players control a monster truck to remove fallen trees and clear blocked routes while AI rescue drones dynamically recalculate paths to rescue stranded hikers and endangered animals. The system integrates custom graph generation, A* pathfinding, real-time environmental adaptation, smooth drone animations, and interactive debugging tools to create an immersive and intelligent rescue experience.</p>,
-  images: [
-    "/images/projects/system7.0.png",
-    "/images/projects/system7.1.png",
-    "/images/projects/system7.2.png",
-    "/images/projects/system7.3.png"
-  ],
-  technologies: [
-    "Unity",
-    "C#",
-    "Blender",
-    "A* Pathfinding",
-    "BFS",
-    "Raycasting",
-    "Physics Engine"
-  ],
-  features: [
-    "3D Environment Design: Built an immersive jungle rescue environment with terrain sculpting, lighting, and environmental effects.",
-    "Custom Graph Generation: Created a mathematical node-based graph using raycasting to identify walkable and blocked areas.",
-    "Dynamic Pathfinding: Implemented A* search with Euclidean heuristic and BFS as a backup search algorithm.",
-    "Physics-Based Interaction: Enabled monster truck and heavy log interactions using Rigidbody and collision physics.",
-    "Real-Time Environment Adaptation: Updated graph nodes dynamically when obstacles were removed, allowing drones to recalculate routes instantly.",
-    "Drone Animation & Movement: Developed smooth drone navigation using interpolation and rotation techniques.",
-    "Debug Visualization: Implemented toggleable path and search visualization using Unity LineRenderer for algorithm debugging."
-  ],
-  outcome:
-    "Created an interactive AI-driven rescue simulation demonstrating real-time pathfinding, environmental adaptation, and advanced game development techniques.",
-  links: {
-    github: "https://github.com/Thejandeera/IS-GV-Assignment.git",
-    demo: "https://www.youtube.com/watch?v=oS8EPMjWPl0"
-  },
-  date: "2026",
-  featured: true
-},
+      id: 8,
+      name: "CIRO Mobile Phone Repire Management System",
+      tagline: "Full-Stack Web Application for Managing Mobile Shop Products and Repair Tracking",
+      description:
+        <p>This project is a full-stack web application for managing a mobile phone shop and tracking repair progress. The system enables administrators to manage products, create repair jobs, and update repair statuses through a secure admin dashboard. Each repair is assigned a unique job number, allowing customers to check repair progress online without authentication.
+
+          The repair workflow is structured using clear stages such as In Queue, Processing, and Repaired. Administrators can upload repair-related images, and the system automatically updates relevant dates when the repair status changes, improving transparency and operational efficiency. This application follows a RESTful architecture with smooth frontend-backend integration, helping strengthen skills in full-stack development, REST API design, database management, and collaborative software development.</p>,
+      images: [
+      ],
+      technologies: ["React.js", "Spring Boot (Java)", "MySQL", "Postman", "REST API"],
+      features: [
+        "Admin dashboard for managing product inventory and repair jobs.",
+        "Unique job number assignment for each repair request.",
+        "Customer-facing repair status tracking without authentication.",
+        "Repair workflow stages: In Queue, Processing, and Repaired.",
+        "Repair image upload support for better documentation.",
+        "Automatic date updates when repair status changes.",
+        "RESTful architecture with smooth frontend-backend integration."
+      ],
+      outcome: "Successfully developed a full-stack repair management system that improved operational efficiency, transparency, and team collaboration.",
+      links: {
+        github: "https://github.com/ishara723"
+      },
+      date: "2025",
+      featured: false
+    },
+    {
+      id: 1,
+      name: "Automated Waste Disposal System",
+      tagline: "Raspberry Pi Powered Smart Waste Segregation",
+      description:
+        <p>This project presents an AI-driven automated waste segregation system that utilizes computer vision and 
+          embedded systems to improve recycling efficiency. The system is powered by a Raspberry Pi integrated with 
+          a camera module to capture real-time images of waste items. Using OpenCV-based image processing and 
+          object detection techniques, the system classifies waste into predefined categories such as plastic, metal, 
+          and glass.
+
+          Once the object is identified, control signals are sent to servo motors to automatically open the 
+          corresponding bin, ensuring accurate and contactless disposal. The solution enhances waste management 
+          by reducing human error, promoting proper recycling practices, and contributing to environmental 
+          sustainability through intelligent automation.</p>,
+      images: [
+        "/images/projects/system1,0.jpeg",
+        "/images/projects/system1.1.jpeg",
+        "/images/projects/system1.2.png"
+      ],
+      technologies: ["Raspberry Pi 3", "Raspberry Pi Camera Module", "OpenCV", "Python", "Servo Motors", "Computer Vision Algorithms"],
+      features: [
+        "Real-Time Object Detection – Instantly identifies waste items using computer vision.",
+        "Automated Bin Selection – Automatically determines the correct category (plastic, metal, glass).",
+        "Motorized Lid Control – Opens the appropriate bin using servo motors.",
+        "Contactless Operation – Reduces human interaction and improves hygiene.",
+        "Embedded System Integration – Fully powered by Raspberry Pi for compact deployment.",
+        "High Classification Accuracy – Uses image processing techniques for reliable sorting.",
+        "Environmental Impact – Promotes proper recycling practices and reduces waste.",
+        "Scalable Design – Can be expanded to include additional waste categories and features in the future.",
+      ],
+      outcome: "Successfully implemented an automated waste segregation system.",
+      links: {
+        demo: "https://drive.google.com/file/d/1-Lxc9gx4iHBNILf8hx272sN-37dQr9Uv/view?usp=sharing"
+      },
+      date: "2024",
+      featured: false
+    }
   ],
 
   /* ================= CERTIFICATIONS ================= */
