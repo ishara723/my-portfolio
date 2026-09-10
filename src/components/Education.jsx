@@ -3,7 +3,6 @@ import {
   GraduationCap,
   MapPin,
   Calendar,
-  Award,
   BookOpen,
   Users
 } from 'lucide-react';
@@ -47,11 +46,21 @@ const EducationCard = ({ edu }) => {
           </div>
 
           {/* Status */}
-          <div className="flex flex-wrap gap-3 mb-4">
-            <div className="bg-green-500/10 text-green-200 px-5 py-3 rounded-xl border border-green-500/30 text-xl font-medium">
-              Undergraduate – Ongoing
+          {edu.status && (
+            <div className="flex flex-wrap gap-3 mb-4">
+              <div className="bg-green-500/10 text-green-200 px-5 py-3 rounded-xl border border-green-500/30 text-xl font-medium">
+                {edu.status}
+              </div>
             </div>
-          </div>
+          )}
+
+          {edu.result && (
+            <div className="flex flex-wrap gap-3 mb-4">
+              <div className="bg-amber-500/10 text-amber-200 px-5 py-3 rounded-xl border border-amber-500/30 text-xl font-medium">
+                Result: {edu.result}
+              </div>
+            </div>
+          )}
 
           {/* Relevant Coursework */}
           {edu.relevantCoursework?.length > 0 && (
@@ -101,6 +110,26 @@ const Education = () => {
   const education = [
     {
       id: 1,
+      degree: "G.C.E. Advanced Level",
+      field: "Mathematics Stream",
+      institution: "Taxila Central College",
+      location: "Horana, Sri Lanka",
+      period: "2020 – 2022",
+      result: "CCC passes",
+      relevantCoursework: [
+        "Combined Mathematics",
+        "Physics",
+        "Chemistry"
+      ],
+      activities: [
+        "Completed Advanced Level studies in the Mathematics stream",
+        "Focused on analytical problem-solving and scientific reasoning",
+        "Built a strong foundation for higher studies in technology and engineering"
+      ],
+      status: "A/L Completed"
+    },
+    {
+      id: 2,
       degree: "Bachelor of Science (Hons)",
       field: "Computer Science",
       institution: "Sri Lanka Institute of Information Technology (SLIIT)",
@@ -121,7 +150,8 @@ const Education = () => {
         "Continued learning through online courses and tutorials",
         "Labs and practical sessions to apply theoretical knowledge",
         "Competitive programming contests and hackathons"
-      ]
+      ],
+      status: "Undergraduate – Ongoing"
     }
   ]; 
 
@@ -144,29 +174,6 @@ const Education = () => {
           {education.map((edu) => (
             <EducationCard key={edu.id} edu={edu} />
           ))}
-        </div>
-
-        {/* Summary */}
-        <div className="mt-14 relative left-1/2 right-1/2 w-screen -translate-x-1/2 px-6 md:px-12 xl:px-16">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-[#0f2232] border border-sky-500/25 rounded-2xl p-8 text-center shadow-sm">
-              <GraduationCap className="text-sky-400 mx-auto mb-4" size={40} />
-              <p className="text-4xl font-bold text-white">1</p>
-              <p className="text-slate-200 text-2xl">Degree Program</p>
-            </div>
-
-            <div className="bg-[#0f2232] border border-sky-500/25 rounded-2xl p-8 text-center shadow-sm">
-              <Award className="text-green-400 mx-auto mb-4" size={40} />
-              <p className="text-4xl font-bold text-white">Ongoing</p>
-              <p className="text-slate-200 text-2xl">Academic Status</p>
-            </div>
-
-            <div className="bg-[#0f2232] border border-sky-500/25 rounded-2xl p-8 text-center shadow-sm">
-              <BookOpen className="text-purple-400 mx-auto mb-4" size={40} />
-              <p className="text-4xl font-bold text-white">5+</p>
-              <p className="text-slate-200 text-2xl">Core CS Subjects</p>
-            </div>
-          </div>
         </div>
       </div>
     </section>

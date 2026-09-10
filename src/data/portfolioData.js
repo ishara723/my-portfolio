@@ -74,6 +74,7 @@ const portfolioData = {
           items: [
             { name: "Java", level: 85 },
             { name: "C", level: 85 },
+            { name: "C#", level: 85 },
             { name: "SQL", level: 80 },
             { name: "JavaScript", level: 80 }
           ]
@@ -83,16 +84,19 @@ const portfolioData = {
           items: [
             { name: "HTML", level: 85 },
             { name: "CSS", level: 85 },
+            { name: "Tailwind", level: 85 },
             { name: "React", level: 75 },
             { name: "Node.js", level: 75 },
-            { name: "Spring Boot", level: 80 }
+            { name: "Spring Boot", level: 80 },
+            { name: "ASP.NET", level: 85 },
           ]
         },
         {
           title: "Databases",
           items: [
             { name: "MySQL", level: 80 },
-            { name: "MongoDB", level: 80 }
+            { name: "MongoDB", level: 80 },
+            { name: "Supabase", level: 80 }
           ]
         }
       ]
@@ -130,14 +134,17 @@ const portfolioData = {
             { name: "Postman", level: 75 },
             { name: "JUnit", level: 80 },
             { name: "JMeter", level: 80 },
-            { name: "Selenium", level: 80 }
+            { name: "Selenium", level: 80 },
+            { name: "k6", level: 85 },
           ]
         },
           {
           title: "Others",
           items: [
             { name: "Blender", level: 85 },
-            { name: "Figma", level: 75 }
+            { name: "Figma", level: 75 },
+            { name: "Balsamiq", level: 85 },
+            { name: "Unity", level: 85 },
           ]
         },
       ],

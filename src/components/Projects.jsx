@@ -8,7 +8,7 @@ const ProjectCard = ({ project }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [showDetails, setShowDetails] = useState(false);
+  const [isDetailsModalOpen, setIsDetailsModalOpen] = useState(false);
 
   const images = Array.isArray(project.images)
     ? project.images
@@ -141,60 +141,17 @@ const ProjectCard = ({ project }) => {
         </div>
 
         {/* Description */}
-        <p className={`text-slate-200 mb-4 text-lg ${showDetails ? '' : 'line-clamp-3'}`}>
+        <p className="text-slate-200 mb-4 text-lg line-clamp-3">
           {project.description}
         </p>
-
-        {/* Features */}
-        {project.features && project.features.length > 0 && (
-          <div className="mb-4">
-            <h4 className="text-xl font-bold text-slate-400 mb-2">Key Features:</h4>
-            <ul className="space-y-1">
-              {(showDetails ? project.features : project.features.slice(0, 3)).map((feature, index) => (
-                <li key={index} className="text-lg text-slate-200 flex items-start gap-2">
-                  <span className="text-sky-400 mt-0.5">•</span>
-                  <span>{feature}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-
-        {showDetails && (
-          <>
-            {/* Outcome */}
-            <div className="mb-4 p-3 bg-slate-900/70 rounded-lg border border-sky-500/20">
-              <p className="text-xl text-slate-200">
-                <span className="font-semibold text-sky-400">Impact:</span> {project.outcome}
-              </p>
-            </div>
-
-            {/* Technologies */}
-            <div>
-              <h4 className="text-xl font-bold text-slate-400 uppercase tracking-wide mb-2">
-                Technologies
-              </h4>
-              <div className="flex flex-wrap gap-2">
-                {project.technologies.map((tech, index) => (
-                  <span
-                    key={index}
-                    className="bg-slate-900 text-slate-200 px-3 py-1 rounded-full text-lg font-medium"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </>
-        )}
 
         <div className="mt-4">
           <button
             type="button"
-            onClick={() => setShowDetails((prev) => !prev)}
+            onClick={() => setIsDetailsModalOpen(true)}
             className="text-sky-400 text-lg font-semibold hover:text-sky-300 transition-colors"
           >
-            {showDetails ? 'View Less' : 'View More Details'}
+            View More Details
           </button>
         </div>
       </div>
@@ -206,6 +163,12 @@ const ProjectCard = ({ project }) => {
         activeIndex={activeImageIndex}
         setActiveIndex={setActiveImageIndex}
         title={project.name}
+      />
+
+      <ProjectDetailsModal
+        isOpen={isDetailsModalOpen}
+        onClose={() => setIsDetailsModalOpen(false)}
+        project={project}
       />
     </div>
   );
@@ -287,6 +250,125 @@ const ImageModal = ({ isOpen, onClose, images, activeIndex, setActiveIndex, titl
             ))}
           </div>
         )}
+      </div>
+    </div>
+  ), document.body);
+};
+
+const ProjectDetailsModal = ({ isOpen, onClose, project }) => {
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        onClose();
+      }
+    };
+
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isOpen, onClose]);
+
+  if (!isOpen || !project) return null;
+
+  if (typeof document === 'undefined') return null;
+
+  return createPortal((
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/85 backdrop-blur-sm px-4 py-6"
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-label={`${project.name} details`}
+    >
+      <div
+        className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-2xl border border-white/15 bg-[#0f2232] p-6 md:p-8"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button
+          type="button"
+          onClick={onClose}
+          className="absolute right-4 top-4 rounded-full bg-white/10 p-2 text-slate-100 hover:bg-white/20 transition-colors"
+          aria-label="Close project details"
+        >
+          <X size={20} />
+        </button>
+
+        <div className="pr-10">
+          <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">{project.name}</h3>
+          <p className="text-lg text-sky-400 font-medium mb-3">{project.tagline}</p>
+          <p className="text-md text-slate-400 mb-6">{project.date}</p>
+
+          <div className="space-y-6 text-slate-200">
+            <div>
+              <p className="text-lg whitespace-pre-line">{project.description}</p>
+            </div>
+
+            {project.features && project.features.length > 0 && (
+              <div>
+                <h4 className="text-xl font-bold text-slate-100 mb-3">Key Features</h4>
+                <ul className="space-y-2">
+                  {project.features.map((feature, index) => (
+                    <li key={index} className="flex items-start gap-2 text-lg">
+                      <span className="text-sky-400 mt-1">•</span>
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {project.outcome && (
+              <div className="p-4 bg-slate-900/70 rounded-lg border border-sky-500/20">
+                <p className="text-lg">
+                  <span className="font-semibold text-sky-400">Impact:</span> {project.outcome}
+                </p>
+              </div>
+            )}
+
+            {project.technologies && project.technologies.length > 0 && (
+              <div>
+                <h4 className="text-xl font-bold text-slate-100 mb-3">Technologies</h4>
+                <div className="flex flex-wrap gap-2">
+                  {project.technologies.map((tech, index) => (
+                    <span
+                      key={index}
+                      className="bg-slate-900 text-slate-200 px-3 py-1 rounded-full text-lg font-medium"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {project.links && Object.keys(project.links).length > 0 && (
+              <div>
+                <h4 className="text-xl font-bold text-slate-100 mb-3">Links</h4>
+                <div className="flex flex-wrap gap-3">
+                  {Object.entries(project.links).map(([key, value]) => (
+                    <a
+                      key={key}
+                      href={value}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 bg-sky-500 text-slate-900 px-4 py-2 rounded-lg text-base font-semibold hover:bg-sky-400 transition-colors"
+                    >
+                      {key === 'github' ? 'GitHub' : key === 'live' ? 'Live Demo' : key === 'demo' ? 'Demo' : key}
+                      <ExternalLink size={16} />
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   ), document.body);
