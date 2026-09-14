@@ -17,13 +17,19 @@ const portfolioData = {
   /* ================= ABOUT SECTION ================= */
 
   about: {
-    summary:
-      "I am a passionate Computer Science undergraduate at SLIIT with strong skills in Java, Spring Boot, React, and full-stack development. I enjoy building scalable web applications and continuously improving my problem-solving abilities.",
+    summary: [
+      "I am a motivated Computer Science undergraduate at SLIIT with a strong foundation in software engineering and full-stack web development. I enjoy designing and developing scalable, reliable, and user-focused applications while continuously strengthening my technical and problem-solving skills.",
+      "With hands-on experience across both frontend and backend development, I work with technologies such as Java, Spring Boot, React, .NET, JavaScript, SQL, and modern development tools. I am particularly interested in building well-structured applications, developing RESTful APIs, working with databases, and turning real-world problems into practical software solutions."
+    ],
     highlights: [
-      "Strong foundation in Object-Oriented Programming",
-      "Full-Stack Web Development experience",
-      "REST API development using Spring Boot",
-      "Experience with React and modern frontend tools"
+      "Full-Stack Web Development",
+      "Java & Spring Boot",
+      "React & Modern Frontend Development",
+      "RESTful API Development",
+      "Database Design & Development",
+      "Object-Oriented Programming",
+      "Software Engineering & Agile Development",
+      "Problem Solving & Analytical Thinking"
     ],
     interests: [
       "Full Stack Development",
@@ -73,30 +79,84 @@ const portfolioData = {
           title: "Programming Languages",
           items: [
             { name: "Java", level: 85 },
+            { name: "Python", level: 85 },
             { name: "C", level: 85 },
             { name: "C#", level: 85 },
-            { name: "SQL", level: 80 },
-            { name: "JavaScript", level: 80 }
+            { name: "JavaScript", level: 80 },
+            { name: "Kotlin", level: 75 },
+            { name: "SQL", level: 80 }
           ]
         },
         {
-          title: "Web Development",
+          title: "Web & Software Development",
           items: [
             { name: "HTML", level: 85 },
             { name: "CSS", level: 85 },
-            { name: "Tailwind", level: 85 },
-            { name: "React", level: 75 },
+            { name: "Tailwind CSS", level: 85 },
+            { name: "React", level: 80 },
             { name: "Node.js", level: 75 },
             { name: "Spring Boot", level: 80 },
-            { name: "ASP.NET", level: 85 },
+            { name: ".NET", level: 85 },
+            { name: "Vite", level: 75 }
           ]
         },
         {
-          title: "Databases",
+          title: "Databases & Backend Services",
           items: [
             { name: "MySQL", level: 80 },
+            { name: "PostgreSQL", level: 75 },
             { name: "MongoDB", level: 80 },
-            { name: "Supabase", level: 80 }
+            { name: "Supabase", level: 80 },
+            { name: "Firebase", level: 70 }
+          ]
+        },
+        {
+          title: "Cloud, DevOps & Tools",
+          items: [
+            { name: "Azure", level: 80 },
+            { name: "AWS", level: 75 },
+            { name: "Docker", level: 80 },
+            { name: "Jenkins", level: 75 },
+            { name: "GitHub", level: 85 },
+            { name: "Linux", level: 80 },
+            { name: "Ubuntu", level: 80 },
+            { name: "Grafana", level: 70 }
+          ]
+        },
+        {
+          title: "Testing & QA",
+          items: [
+            { name: "Selenium", level: 80 },
+            { name: "JMeter", level: 80 },
+            { name: "K6", level: 80 },
+            { name: "JUnit", level: 80 },
+            { name: "Postman", level: 75 }
+          ]
+        },
+        {
+          title: "Mobile, AI & Computer Vision",
+          items: [
+            { name: "Android", level: 75 },
+            { name: "Android Studio", level: 75 },
+            { name: "TensorFlow", level: 70 },
+            { name: "OpenCV", level: 75 }
+          ]
+        },
+        {
+          title: "UI/UX, 3D & Game Development",
+          items: [
+            { name: "Figma", level: 80 },
+            { name: "Balsamiq", level: 80 },
+            { name: "Canva", level: 75 },
+            { name: "Blender", level: 80 },
+            { name: "Unity", level: 80 }
+          ]
+        },
+        {
+          title: "Project Management",
+          items: [
+            { name: "Agile", level: 85 },
+            { name: "Jira", level: 80 }
           ]
         }
       ]
@@ -111,44 +171,6 @@ const portfolioData = {
         { name: "Problem Solving", level: 75 },
         { name: "Adaptability and Learning", level: 77 }
       ]
-    },
-    {
-      category: "Tools & Platforms",
-      subcategories: [
-        {
-          title: "Version Control",
-          items: [
-            { name: "GitHub", level: 80 },
-          ]
-        },
-        {
-          title: "Methodologies",
-          items: [
-            { name: "Agile", level: 85 },
-            { name: "Scrum", level: 75 }
-          ]
-        },
-        {
-          title: "Debugging & Testing",
-          items: [
-            { name: "Postman", level: 75 },
-            { name: "JUnit", level: 80 },
-            { name: "JMeter", level: 80 },
-            { name: "Selenium", level: 80 },
-            { name: "k6", level: 85 },
-          ]
-        },
-          {
-          title: "Others",
-          items: [
-            { name: "Blender", level: 85 },
-            { name: "Figma", level: 75 },
-            { name: "Balsamiq", level: 85 },
-            { name: "Unity", level: 85 },
-          ]
-        },
-      ],
-
     }
   ],
 
@@ -160,7 +182,14 @@ const portfolioData = {
       name: "Coordina – Community Collaboration & Resource Platform (CCRP)",
       tagline: "Full-Stack Community Collaboration & Resource Management Platform",
       description:
-        <p>Coordina (CCRP) is a full-stack web application developed to help community organizations, NGOs, schools, temples, and societies manage events, donation drives, resource bookings, tasks, forms, and communication through a single secure platform. Built using React.js, ASP.NET Web API, and MySQL, the system replaces fragmented coordination methods such as phone calls, spreadsheets, and messaging apps. A key innovation of the platform is its synchronized multi-level calendar system with real-time updates and role-based collaboration, improving transparency, scheduling efficiency, and community engagement.</p>,
+        <p>Coordina (CCRP) is a full-stack web application developed to help community 
+          organizations, NGOs, schools, temples, and societies manage events, donation 
+          drives, resource bookings, tasks, forms, and communication through a single 
+          secure platform. Built using React.js, ASP.NET Web API, and MySQL, the system 
+          replaces fragmented coordination methods such as phone calls, spreadsheets, 
+          and messaging apps. A key innovation of the platform is its synchronized 
+          multi-level calendar system with real-time updates and role-based collaboration, 
+          improving transparency, scheduling efficiency, and community engagement.</p>,
       images: [
         "/images/projects/system6.0.png",
         "/images/projects/system6.1.png",
@@ -204,7 +233,15 @@ const portfolioData = {
       name: "Tropical Reserve Rescue",
       tagline: "AI-Powered Wildlife Rescue & Pathfinding Simulation Game",
       description:
-        <p>Tropical Reserve Rescue is a 3D wildlife rescue simulation game developed in Unity, set in a storm-affected Sri Lankan eco-tourism reserve. The project combines game development, artificial intelligence, and physics-based interaction to simulate autonomous rescue operations. Players control a monster truck to remove fallen trees and clear blocked routes while AI rescue drones dynamically recalculate paths to rescue stranded hikers and endangered animals. The system integrates custom graph generation, A* pathfinding, real-time environmental adaptation, smooth drone animations, and interactive debugging tools to create an immersive and intelligent rescue experience.</p>,
+        <p>Tropical Reserve Rescue is a 3D wildlife rescue simulation game developed 
+          in Unity, set in a storm-affected Sri Lankan eco-tourism reserve. The project 
+          combines game development, artificial intelligence, and physics-based interaction 
+          to simulate autonomous rescue operations. Players control a monster truck to remove 
+          fallen trees and clear blocked routes while AI rescue drones dynamically recalculate 
+          paths to rescue stranded hikers and endangered animals. The system integrates custom 
+          graph generation, A* pathfinding, real-time environmental adaptation, smooth drone 
+          animations, and interactive debugging tools to create an immersive and intelligent 
+          rescue experience.</p>,
       images: [
         "/images/projects/system7.0.png",
         "/images/projects/system7.1.png",
@@ -363,9 +400,19 @@ const portfolioData = {
       name: "CIRO Mobile Phone Repire Management System",
       tagline: "Full-Stack Web Application for Managing Mobile Shop Products and Repair Tracking",
       description:
-        <p>This project is a full-stack web application for managing a mobile phone shop and tracking repair progress. The system enables administrators to manage products, create repair jobs, and update repair statuses through a secure admin dashboard. Each repair is assigned a unique job number, allowing customers to check repair progress online without authentication.
+        <p>This project is a full-stack web application for managing a mobile phone shop and 
+          tracking repair progress. The system enables administrators to manage products, 
+          create repair jobs, and update repair statuses through a secure admin dashboard. 
+          Each repair is assigned a unique job number, allowing customers to check repair 
+          progress online without authentication.
 
-          The repair workflow is structured using clear stages such as In Queue, Processing, and Repaired. Administrators can upload repair-related images, and the system automatically updates relevant dates when the repair status changes, improving transparency and operational efficiency. This application follows a RESTful architecture with smooth frontend-backend integration, helping strengthen skills in full-stack development, REST API design, database management, and collaborative software development.</p>,
+          The repair workflow is structured using clear stages such as In Queue, Processing, 
+          and Repaired. Administrators can upload repair-related images, and the system 
+          automatically updates relevant dates when the repair status changes, improving 
+          transparency and operational efficiency. This application follows a RESTful 
+          architecture with smooth frontend-backend integration, helping strengthen skills 
+          in full-stack development, REST API design, database management, and collaborative 
+          software development.</p>,
       images: [
       ],
       technologies: ["React.js", "Spring Boot (Java)", "MySQL", "Postman", "REST API"],
