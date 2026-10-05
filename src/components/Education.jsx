@@ -26,11 +26,11 @@ const EducationCard = ({ edu }) => {
             <h3 className="text-xl md:text-xl font-bold text-white mb-2">
               {edu.degree}
             </h3>
-            <p className="text-3xl text-sky-400 font-semibold mb-2">
-              {edu.field}
-            </p>
-            <p className="text-2xl text-slate-200 mb-3">
+            <p className="text-2xl text-slate-200 mb-2">
               {edu.institution}
+            </p>
+            <p className="text-3xl text-sky-400 font-semibold mb-3">
+              {edu.field}
             </p>
 
             <div className="flex flex-wrap gap-5 text-xl text-slate-200">
@@ -109,26 +109,6 @@ const EducationCard = ({ edu }) => {
 const Education = () => {
   const education = [
     {
-      id: 1,
-      degree: "G.C.E. Advanced Level",
-      field: "Mathematics Stream",
-      institution: "Taxila Central College",
-      location: "Horana, Sri Lanka",
-      period: "2020 – 2022",
-      result: "CCC passes",
-      relevantCoursework: [
-        "Combined Mathematics",
-        "Physics",
-        "Chemistry"
-      ],
-      activities: [
-        "Completed Advanced Level studies in the Mathematics stream",
-        "Focused on analytical problem-solving and scientific reasoning",
-        "Built a strong foundation for higher studies in technology and engineering"
-      ],
-      status: "A/L Completed"
-    },
-    {
       id: 2,
       degree: "Bachelor of Science (Hons)",
       field: "Computer Science",
@@ -152,6 +132,26 @@ const Education = () => {
         "Competitive programming contests and hackathons"
       ],
       status: "Undergraduate – Ongoing"
+    },
+    {
+      id: 1,
+      degree: "G.C.E. Advanced Level",
+      field: "Mathematics Stream",
+      institution: "Taxila Central College",
+      location: "Horana, Sri Lanka",
+      period: "2020 – 2022",
+      result: "CCC passes",
+      relevantCoursework: [
+        "Combined Mathematics",
+        "Physics",
+        "Chemistry"
+      ],
+      activities: [
+        "Completed Advanced Level studies in the Mathematics stream",
+        "Focused on analytical problem-solving and scientific reasoning",
+        "Built a strong foundation for higher studies in technology and engineering"
+      ],
+      status: "A/L Completed"
     }
   ]; 
 

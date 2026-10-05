@@ -94,12 +94,28 @@ const CertificationCard = ({ cert }) => {
 const Certifications = () => {
   const certifications = [
     {
-      id: 1,
-      name: "Web Designing & Fundamentals of Web Development",
-      issuer: "Zonal Computer Resource Centre, Taxila Central College, Horana",
-      date: "2020",
+      id: 5,
+      name: "AI/ML Engineer - Stage 3",
+      issuer: "Sri Lanka Institute of Information Technology (SLIIT), Malabe",
+      date: "2026",
       credentialUrl: null,
-      image: "/images/certificates/web-designing.jpg"
+      image: "/images/certifications/AI ML Engineer - stage 3.png"
+    },
+    {
+      id: 4,
+      name: "AI/ML Engineer - Stage 2",
+      issuer: "Sri Lanka Institute of Information Technology (SLIIT), Malabe",
+      date: "2026",
+      credentialUrl: null,
+      image: "/images/certifications/AI ML Engineer - stage 2.png"
+    },
+    {
+      id: 3,
+      name: "AI/ML Engineer - Stage 1",
+      issuer: "Sri Lanka Institute of Information Technology (SLIIT), Malabe",
+      date: "2025",
+      credentialUrl: null,
+      image: "/images/certifications/AI ML Engineer - stage 1.png"
     },
     {
       id: 2,
@@ -108,6 +124,14 @@ const Certifications = () => {
       date: "2023",
       credentialUrl: null,
       image: "/images/certificates/computing-career-development.jpg"
+    },
+    {
+      id: 1,
+      name: "Web Designing & Fundamentals of Web Development",
+      issuer: "Zonal Computer Resource Centre, Taxila Central College, Horana",
+      date: "2020",
+      credentialUrl: null,
+      image: "/images/certificates/web-designing.jpg"
     }
   ];
 
